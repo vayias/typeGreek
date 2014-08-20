@@ -10,20 +10,21 @@
 angular.module('angularTestApp')
   .controller('MainCtrl', function ($scope) {
 
-var greekArr ="ΑΒΨΔΕΦΓΗΙ ΚΛΜΝΟΠ ΡΣΤΘΩ ΧΥΖ";
+var greekArr = "ΑΒΨΔΕΦΓΗΙ ΚΛΜΝΟΠ ΡΣΤΘΩ ΧΥΖ";
 var map = {};
-for (var i = 65; i <91; i++) {
-		map[i] = greekArr.charAt(i-65);
+
+for (var i = 65; i < 91; i++) {
+    map[i] = greekArr.charAt(i - 65);
 }
 
 $('textarea').on('keydown', function (e) {
-	if(e.keyCode in map) {
-		console.log(2);
-        e.preventDefault();
-        $(this).append(map[e.keyCode]).focus();
+   var textArea = $(this)[0];
+    
+
+    if (!e.ctrlKey & map.hasOwnProperty(e.keyCode)) {
+    	if(map[e.keyCode] !== " ")
+        	textArea.value += map[e.keyCode];
+        return false;
     }
-            return true;
-
 });
-
   });
