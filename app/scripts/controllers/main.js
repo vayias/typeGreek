@@ -10,7 +10,7 @@
 angular.module('angularTestApp')
   .controller('MainCtrl', function ($scope) {
 
-var greekArr = "ΑΒΨΔΕΦΓΗΙ ΚΛΜΝΟΠ ΡΣΤΘΩ ΧΥΖ";
+var greekArr = "ΑΒΨΔΕΦΓΗΙΞΚΛΜΝΟΠ ΡΣΤΘΩ ΧΥΖ";
 var map = {};
 
 for (var i = 65; i < 91; i++) {
